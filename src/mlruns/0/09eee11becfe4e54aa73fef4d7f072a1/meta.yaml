@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/iNeuron/FullStack/DeepLearning/CV/MLflow-CNN-classifier/src/mlruns/0/09eee11becfe4e54aa73fef4d7f072a1/artifacts
+end_time: 1646214484738
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 09eee11becfe4e54aa73fef4d7f072a1
+run_uuid: 09eee11becfe4e54aa73fef4d7f072a1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1646214484697
+status: 4
+tags: []
+user_id: neera
