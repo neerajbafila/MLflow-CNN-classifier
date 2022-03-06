@@ -1,8 +1,9 @@
 import os
 import logging
 import argparse
+from pickletools import optimize
 import tensorflow as tf
-from src.utils.common import read_yaml
+from src.utils.common import create_directories, read_yaml
 from src.utils.model_ops import write_model_summary
 
 STAGE = "stage_02_base_model_creation" ## stage name
@@ -29,8 +30,16 @@ def main(config_path):
 
     classifier = tf.keras.Sequential(LAYERS)
     logging.info(f"base model summary:\n{write_model_summary(classifier)}")
-    logging.info(f"base model created") 
-    
+    logging.info(f"base model created")
+
+    classifier.compile(optimizer=tf.keras.optimizers.Adam(params['lr']), 
+                        loss=params['loss'], metrics=params['metrics']
+                        )
+    path_of_model_dir = os.path.join(config['data']['local_dir'], config['data']['model_dir'])
+    create_directories([path_of_model_dir])
+    path_to_model = os.path.join(path_of_model_dir, config['data']['init_model_file'])
+    classifier.save(path_to_model)
+    logging.info(f"base model saved to {path_to_model}")
     
 
 
