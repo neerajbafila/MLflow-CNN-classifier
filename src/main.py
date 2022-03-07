@@ -25,6 +25,7 @@ def main():
     with mlflow.start_run() as run:
         mlflow.run(".", "get_data", use_conda=False)
         mlflow.run(".", "base_model_creation", use_conda=False)
+        mlflow.run(".", "model_training", use_conda=False)
 
 
 if __name__ == "__main__":

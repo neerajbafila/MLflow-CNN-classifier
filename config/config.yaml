@@ -7,10 +7,16 @@ data:
   bad_data_folder: 'bad_data_folder'
   model_dir: model
   init_model_file: init_model.h5
+  trained_model_file: trained_model.h5
 
 params:
   img_shape: [180,180,3]
   lr: 0.001
   metrics: ["accuracy"]
   loss: sparse_categorical_crossentropy
-
+  validation_split: 0.2
+  seed: 42
+  buffer_size: 32
+  epochs: 1
+  batch_size: 32
+  buffer_size: 32
